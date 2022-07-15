@@ -321,6 +321,7 @@ function move(event) {
 					checkEndGame() && console.log('ТЫ ПРОИГРАВ')
 				}
 			})
+		return
 	}
 	if (event.key.toLowerCase() === 's' || event.key.toLowerCase() === 'ы' || event.key.toLowerCase() === 'arrowdown') {
 		oldScore = score
@@ -355,6 +356,7 @@ function move(event) {
 					checkEndGame() && console.log('ТЫ ПРОИГРАВ')
 				}
 			})
+		return
 	}
 	if (event.key.toLowerCase() === 'a' || event.key.toLowerCase() === 'ф' || event.key.toLowerCase() === 'arrowleft') {
 		oldScore = score
@@ -389,6 +391,7 @@ function move(event) {
 					checkEndGame() && console.log('ТЫ ПРОИГРАВ')
 				}
 			})
+		return
 	}
 	if (event.key.toLowerCase() === 'd' || event.key.toLowerCase() === 'в' || event.key.toLowerCase() === 'arrowright') {
 		oldScore = score
@@ -423,6 +426,7 @@ function move(event) {
 					checkEndGame() && console.log('ТЫ ПРОИГРАВ')
 				}
 			})
+		return
 	}
 	if (event.key.toLowerCase() === ' ') {
 		// Box.create()
@@ -502,12 +506,12 @@ let touchEndX = 0
 let touchStartY = 0
 let touchEndY = 0
 
-document.addEventListener('touchstart', e => {
+$game.addEventListener('touchstart', e => {
 	touchStartX = e.changedTouches[0].screenX
 	touchStartY = e.changedTouches[0].screenY
 })
 
-document.addEventListener('touchend', e => {
+$game.addEventListener('touchend', e => {
 	touchEndX = e.changedTouches[0].screenX
 	touchEndY = e.changedTouches[0].screenY
 	checkDirection()
@@ -548,6 +552,7 @@ function checkDirection() {
 					checkEndGame() && console.log('ТЫ ПРОИГРАВ')
 				}
 			})
+		return
 	}
 
 	if (touchEndX > touchStartX && touchEndX - touchStartX > Math.abs(touchStartY - touchEndY)) {
@@ -584,6 +589,7 @@ function checkDirection() {
 					checkEndGame() && console.log('ТЫ ПРОИГРАВ')
 				}
 			})
+		return
 	}
 
 	if (touchEndY < touchStartY && touchStartY - touchEndY > touchStartX - touchEndX) {
@@ -620,6 +626,7 @@ function checkDirection() {
 					checkEndGame() && console.log('ТЫ ПРОИГРАВ')
 				}
 			})
+		return
 	}
 
 	if (touchEndY > touchStartY && touchEndY - touchStartY > touchStartX - touchEndX) {
@@ -656,5 +663,6 @@ function checkDirection() {
 					checkEndGame() && console.log('ТЫ ПРОИГРАВ')
 				}
 			})
+		return
 	}
 }
