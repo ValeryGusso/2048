@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	user-select: none;
+	font-family: 'Bangers', cursive;
+}
+
+body {
+	display: flex;
+	background: linear-gradient(45deg, #2c3e50, #4ca1af);
+	width: 100%;
+	height: 100vh;
+	align-items: center;
+	justify-content: center;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: top;
+	width: 100%;
+	height: 100vh;
+}
+
+.header {
+	display: flex;
+	width: 600px;
+	height: 100px;
+	align-items: flex-end;
+	justify-content: space-between;
+	height: 15%;
+	font-size: 36px;
+	padding-bottom: 10px;
+}
+
+
+.score-box {
+	position: relative;
+	display: flex;
+	width: 75px;
+	height: 75px;
+	align-items: center;
+	justify-content: center;
+	font-size: 24px;
+	margin-left: 20%;
+	margin-top: 2%;
+	border: 2px solid black;
+	border-radius: 30%;
+}
+
+.best-box {
+	position: relative;
+	display: flex;
+	width: 75px;
+	height: 75px;
+	align-items: center;
+	justify-content: center;
+	font-size: 24px;
+	margin-right: 5%;
+	margin-top: 0%;
+	border: 2px solid black;
+	border-radius: 30%;
+}
+
+.score-box::before {
+	content: 'Score: ';
+	position: absolute;
+	font-size: 42px;
+	left: -150%;
+	top: 25%;
+}
+
+.best-box::before {
+	content: 'Best: ';
+	position: absolute;
+	font-size: 42px;
+	right: 120%;
+	top: 25%;
+}
+
+.float-score {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 42px;
+	color: orange;
+	width: 50px;
+	height: 50px;
+	transition: 3s;
+}
+
+
+.game {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	width: 600px;
+	height: 600px;
+	width: 70vmin;
+	height: 70vmin;
+	border-radius: 7%;
+	background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px, linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px, linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px, linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+		linear-gradient(90deg, #1b1b1b 10px, transparent 10px), linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+	background-color: #131313;
+	background-size: 20px 20px;
+}
+
+/* .mobile-nav {
+	display: none;
+} */
+
+.box {
+	position: absolute;
+	display: flex;
+	font-size: 52px;
+	box-sizing: border-box;
+	border: 2px solid black;
+	border-radius: 30%;
+	background-color: burlywood;
+	align-items: center;
+	justify-content: center;
+	transition: 0.5s;
+	z-index: 5;
+}
+
+
+@media only screen and (max-width: 600px) {
+	.header {
+		width: 70%;
+		height: 100px;
+		font-size: 18px;
+		padding-bottom: 10px;
+		margin-bottom: 20px;
+		margin-top: 100px;
+	}
+	
+	.score-box {
+margin-left: 15%;
+	}
+
+	.best-box {
+margin-right: 10%;
+	}
+
+	.score-box::before {
+		font-size: 32px;
+		left: 0%;
+		top: -50%;
+	}
+	
+	.best-box::before {
+		font-size: 32px;
+		right: 15%;
+		top: -50%;
+	}
+
+	.game {
+		width: 90vmin;
+		height: 90vmin;
+	}
+
+	.box {
+		font-size: 28px;
+	}
+
+	/* .mobile-nav {
+		position: relative;
+		display: flex;
+		display: none;
+		width: 90vmin;
+		height: 60vmin;
+		margin-top: 30px;
+	}
+
+	.mobile-nav div {
+		position: absolute;
+		width: 25vmin;
+		height: 25vmin;
+	}
+
+	.mobile-nav img {
+		width: 100%;
+		height: 100%;
+	}
+
+	.up-arrow {
+		top: 5%;
+		left: 35%;
+		transform: rotateZ(-90deg)
+	}
+
+	.down-arrow {
+		top: 75%;
+		left: 35%;
+		transform: rotate(90deg)
+	}
+	
+	.left-arrow {
+		top: 40%;
+		left: 5%;
+		transform: rotate(180deg)
+	}
+
+	.right-arrow {
+		top: 40%;
+		left: 65%;
+	} */
+}
