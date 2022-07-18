@@ -529,8 +529,8 @@ body {
 		display: none;
 		z-index: 6;
 		position: absolute;
-		top: calc(100% - 70vmin);
-		left: calc(0% - 1.5vmin);
+		top: calc(100% - 40vmin);
+		left: calc(0% + 4vmin);
 		width: 100%;
 	}
 
