@@ -8,12 +8,84 @@
 		<title>2048 game</title>
 	</head>
 	<body>
-		<div class="container">
+		<div class="menu" id="menu">
+			<div class="title" id="title">
+				<div class="num">2</div>
+				<div class="num">0</div>
+				<div class="num">4</div>
+				<div class="num">8</div>
+			</div>
+			<div class="menu-list" id="menu-list">
+				<ul>
+					<li data-btn="play">Play</li>
+					<li data-btn="settings">Settings</li>
+					<li data-btn="about">About</li>
+				</ul>
+			</div>
+			<div class="settings" id="settings">
+				<div class="arrow" id="arrow">
+					<div style="--back: -160px, 45px">B</div>
+					<div style="--back: -160px, 45px">A</div>
+					<div style="--back: 20px, -45px">C</div>
+					<div style="--back: 20px, -45px">K</div>
+				</div>
+				<div class="lang">
+					<div class="main">Language:</div>
+					<div class="options" id="lang">
+						<div data-lang="ru">Russian</div>
+						<div data-lang="eng" class="active">English</div>
+					</div>
+				</div>
+				<div class="speed">
+					<div class="main">Animation speed:</div>
+					<div class="options" id="speed">
+						<div data-speed="1">Sloooow</div>
+						<div data-speed="0.5" class="active">Normal</div>
+						<div data-speed="0.25">Fast</div>
+					</div>
+				</div>
+				<div class="size">
+					<div class="main">Game field size:</div>
+					<div class="options" id="field">
+						<div data-field="4" class="active">4x4</div>
+						<div data-field="6">6x6</div>
+						<div data-field="8">8x8</div>
+					</div>
+				</div>
+				<div class="reset">
+					<div class="main">Reset all records:</div>
+					<div class="options" id="reset">
+					<img data-reset="res" src="img/arrow.png" alt="arrow">
+					</div>
+				</div>
+			</div>
+			<div class="about" id="about">It is clone of 2048 popular game. My third JS-project and first try to do full-fledged application including mobile version. Powered by pure JS without any frameworks and library<br><span class="how">How to play it?</span><br>Use arrow keys / W S A D or phone swipe for move cells. Cells with the same number merge into one when they touch
+			</div>
+		</div>
+		<div class="container" id="container">
 			<div class="header" id="header">
-					<div class="score-box" id="score-box">0</div>
-					<div class="best-box" id="best-box">0</div>
+				<div class="score-box" id="score-box"></div>
+				<div class="best-box" id="best-box"></div>
 			</div>
 			<div class="game" id="game"></div>
+			<div class="exit" id="exit">
+				<div style="--e: 55px, -110px">M</div>
+				<div style="--e: -55px, 0px">E</div>
+				<div style="--e: 55px, 0px">N</div>
+				<div style="--e: -55px, 110px">U</div>
+			</div>
+		</div>
+		<div class="warning" id="warning">
+			<div class="w-body" id="w-body">
+				<div id="w-text">
+					Are you sure want to continue? <br />
+					All your current progress will be lose
+				</div>
+				<div class="ansvers">
+					<div data-ans="yes" class="yes">Yes</div>
+					<div data-ans="no" class="no">No&nbsp;</div>
+				</div>
+			</div>
 		</div>
 		<script src="script.js"></script>
 	</body>

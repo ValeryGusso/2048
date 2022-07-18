@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
 
 * {
 	margin: 0;
 	padding: 0;
 	user-select: none;
-	font-family: 'Bangers', cursive;
+	font-family: 'Knewave', cursive;
 }
 
 body {
 	display: flex;
-	background: linear-gradient(45deg, #2c3e50, #4ca1af);
+	background: linear-gradient(-45deg, #ffd89b, #19547b);
 	width: 100%;
 	height: 100vh;
 	align-items: center;
@@ -17,8 +17,9 @@ body {
 	overflow: hidden;
 }
 
+/* Стили игры */
 .container {
-	display: flex;
+	display: none;
 	flex-direction: column;
 	align-items: center;
 	justify-content: top;
@@ -37,49 +38,49 @@ body {
 	padding-bottom: 10px;
 }
 
-
 .score-box {
 	position: relative;
 	display: flex;
-	width: 75px;
+	width: 125px;
 	height: 75px;
 	align-items: center;
 	justify-content: center;
 	font-size: 24px;
 	margin-left: 20%;
-	margin-top: 2%;
-	border: 2px solid black;
-	border-radius: 30%;
+	margin-bottom: 2%;
+	background-color: burlywood;
+	border-radius: 20px;
 }
 
 .best-box {
 	position: relative;
 	display: flex;
-	width: 75px;
+	width: 125px;
 	height: 75px;
 	align-items: center;
 	justify-content: center;
 	font-size: 24px;
-	margin-right: 5%;
-	margin-top: 0%;
-	border: 2px solid black;
-	border-radius: 30%;
+	margin-right: 0%;
+	margin-bottom: 2%;
+	background-color: burlywood;
+	border-radius: 20px;
 }
 
 .score-box::before {
 	content: 'Score: ';
 	position: absolute;
-	font-size: 42px;
-	left: -150%;
-	top: 25%;
+	font-size: 36px;
+	left: -90%;
+	top: 10%;
 }
 
 .best-box::before {
-	content: 'Best: ';
+	content: var(--b);
 	position: absolute;
-	font-size: 42px;
-	right: 120%;
-	top: 25%;
+	font-size: 36px;
+	width: 170px;
+	right: 100%;
+	top: 10%;
 }
 
 .float-score {
@@ -88,46 +89,325 @@ body {
 	align-items: center;
 	justify-content: center;
 	font-size: 42px;
-	color: orange;
+	color: orangered;
+	letter-spacing: 0.2em;
 	width: 50px;
 	height: 50px;
-	transition: 3s;
+	transition: 7s;
 }
-
 
 .game {
 	position: relative;
+	box-sizing: border-box;
 	display: flex;
 	flex-wrap: wrap;
 	width: 600px;
 	height: 600px;
 	width: 70vmin;
 	height: 70vmin;
-	border-radius: 7%;
-	background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px, linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px, linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px, linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
-		linear-gradient(90deg, #1b1b1b 10px, transparent 10px), linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
-	background-color: #131313;
-	background-size: 20px 20px;
+	border-radius: var(--br);
+	background: url(img/wall.jpg);
+	background-size: cover;
 }
-
-/* .mobile-nav {
-	display: none;
-} */
 
 .box {
 	position: absolute;
 	display: flex;
 	font-size: 52px;
 	box-sizing: border-box;
-	border: 2px solid black;
 	border-radius: 30%;
 	background-color: burlywood;
 	align-items: center;
 	justify-content: center;
-	transition: 0.5s;
+	transition: var(--t);
 	z-index: 5;
 }
 
+/* Кнопка выхода */
+.exit {
+	display: flex;
+	flex-wrap: wrap;
+	position: absolute;
+	top: 16%;
+	left: 20%;
+	width: 220px;
+	height: 220px;
+	cursor: pointer;
+}
+
+.exit div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	width: 100px;
+	height: 100px;
+	background: burlywood;
+	border-radius: 30%;
+	font-size: 46px;
+	transition: 0.75s;
+}
+
+.exit div:first-child {
+	margin: 0 10px 0px 0;
+}
+
+.exit div:last-child {
+	margin-left: 10px;
+}
+
+.exit:hover div {
+	transform: translate(var(--e));
+}
+
+.warning {
+	display: none;
+	position: absolute;
+	color: azure;
+	font-size: 36px;
+	width: 100%;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.75);
+	z-index: 6;
+}
+
+.w-body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	transform: scale(0);
+	transition: 1s;
+}
+
+.ansvers {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 500px;
+	height: 150px;
+	margin-top: 10px;
+}
+
+.ansvers div {
+	width: 200px;
+	height: 150px;
+	align-items: center;
+	justify-content: center;
+	font-size: 120px;
+	transition: 1s;
+}
+
+.ansvers div:hover {
+	color: #4ca1af;
+	letter-spacing: 0.15em;
+	cursor: pointer;
+}
+
+/* Стили меню */
+
+.menu {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100vh;
+}
+
+.title {
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	width: 80vmin;
+	height: 30vmin;
+	top: 10%;
+	transition: 1s;
+}
+
+.num {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 150px;
+	height: 150px;
+	font-size: 100px;
+	background: burlywood;
+	border-radius: 30%;
+	margin-left: 15px;
+}
+
+.menu-list ul {
+	display: flex;
+	list-style: none;
+	font-size: 56px;
+	flex-direction: row;
+	/* margin-top: 100px; */
+}
+
+.menu-list ul:hover li {
+	filter: blur(7px);
+}
+
+.menu-list ul li:hover {
+	filter: blur(0px);
+	background: lemonchiffon;
+}
+
+.menu-list ul li {
+	position: relative;
+	cursor: pointer;
+	display: flex;
+	width: 250px;
+	height: 250px;
+	background: burlywood;
+	border-radius: 50px;
+	align-items: center;
+	justify-content: center;
+	transition: 1s;
+	margin-left: 20px;
+}
+
+.menu-list ul li:first-child {
+	margin-left: 0;
+}
+
+.settings > div {
+	display: none;
+	justify-content: left;
+	list-style: none;
+	font-size: 36px;
+	background: none;
+	margin-top: 50px;
+}
+
+.main,
+.options {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.options div {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 28px;
+	margin-right: 15px;
+	background: olive;
+	border-radius: 30%;
+	width: 125px;
+	height: 125px;
+	transition: 1s;
+}
+
+.options:last-child {
+	position: relative;
+	width: 100%;
+	height: 100px;
+}
+
+.options img {
+	position: absolute;
+	width: 125px;
+	height: 125px;
+	top: -10%;
+	left: 165px;
+	transition: 0s;
+}
+
+.options img:hover {
+	cursor: pointer;
+	transform: rotateZ(360deg);
+	transition: 1s;
+}
+
+.options div:first-child {
+	margin-left: -30px;
+}
+
+.options:hover div {
+	filter: blur(5px) opacity(0.5);
+}
+
+.options div:hover {
+	cursor: pointer;
+	filter: blur(0);
+}
+
+.active::after {
+	content: '';
+	position: absolute;
+	top: 100%;
+	right: -00%;
+	width: 100%;
+	height: 10px;
+	background: burlywood;
+	filter: blur(5px);
+}
+
+.options .active {
+	background: burlywood;
+}
+
+.arrow {
+	position: absolute;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	top: 38%;
+	left: 22%;
+	width: 180px;
+	height: 170px;
+}
+
+.arrow div {
+	display: flex;
+	width: 80px;
+	height: 80px;
+	background: burlywood;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	border-radius: 30%;
+	align-items: center;
+	justify-content: center;
+	transition: 0.75s;
+}
+
+.arrow:hover div {
+	cursor: pointer;
+	transform: translate(var(--back));
+}
+
+.about {
+	position: relative;
+	display: none;
+	flex-direction: column;
+	flex-wrap: wrap;
+	text-align: center;
+	line-height: 1.5em;
+	width: 75vmin;
+	height: 60vmin;
+	font-size: 28px;
+	margin-top: 150px;
+	margin-left: 100px;
+	transition: 0.5s;
+}
+
+.how {
+	margin-top: 20px;
+	font-size: 32px;
+	color: burlywood;
+}
 
 @media only screen and (max-width: 600px) {
 	.header {
@@ -138,13 +418,17 @@ body {
 		margin-bottom: 20px;
 		margin-top: 100px;
 	}
-	
+
+	.container {
+		overflow: hidden;
+	}
+
 	.score-box {
-margin-left: 15%;
+		margin-left: 15%;
 	}
 
 	.best-box {
-margin-right: 10%;
+		margin-right: 10%;
 	}
 
 	.score-box::before {
@@ -152,7 +436,7 @@ margin-right: 10%;
 		left: 0%;
 		top: -50%;
 	}
-	
+
 	.best-box::before {
 		font-size: 32px;
 		right: 15%;
@@ -162,52 +446,168 @@ margin-right: 10%;
 	.game {
 		width: 90vmin;
 		height: 90vmin;
+		border-radius: 20px !important;
 	}
 
 	.box {
-		font-size: 28px;
+		font-size: 14px;
 	}
 
-	/* .mobile-nav {
-		position: relative;
-		display: flex;
-		display: none;
-		width: 90vmin;
-		height: 60vmin;
-		margin-top: 30px;
-	}
-
-	.mobile-nav div {
-		position: absolute;
-		width: 25vmin;
-		height: 25vmin;
-	}
-
-	.mobile-nav img {
+	.title {
 		width: 100%;
+		height: 25vmin;
+		top: 0% !important;
+	}
+
+	.num {
+		width: 75px;
+		height: 75px;
+		font-size: 50px;
+	}
+
+	.menu-list {
+		position: absolute;
+		top: 15%;
+		width: 50%;
+	}
+	.menu-list ul {
+		flex-wrap: wrap;
+		font-size: 38px;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.menu-list ul li {
+		width: 45vmin;
+		height: 45vmin;
+		border-radius: 30px;
+		margin: 0 10px 10px 0;
+	}
+
+	.settings > div {
+		display: none;
+		flex-direction: column;
+		justify-content: left;
+		font-size: 26px;
+		margin-top: 10px;
+	}
+
+	.options div {
+		font-size: 18px;
+		width: 75px;
+		height: 75px;
+		filter: none !important;
+	}
+
+	.options img {
+		width: 75px;
+		height: 75px;
+		top: 10%;
+		left: 75px;
+	}
+
+	.arrow {
+		display: none;
+		top: 85%;
+		left: 7%;
+		width: 180px;
+		height: 170px;
+		z-index: 6;
+	}
+
+	.arrow div {
+		font-size: 52px;
+		transform: translate(0) !important;
+	}
+
+	.about {
+		display: none;
+		flex-direction: column;
+		flex-wrap: wrap;
+		margin: 120px 0 0 0;
+		width: 90%;
+		height: 80%;
+		font-size: 24px;
+	}
+
+	.how {
+		margin-top: 30px;
+		font-size: 32px;
+		color: burlywood;
+	}
+	.warning {
+		display: none;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		color: azure;
+		font-size: 28px;
+		width: 100%;
+		height: 100vh;
+		background: rgba(0, 0, 0, 0.75);
+		z-index: 6;
+	}
+
+	.w-body {
+		width: 90%;
 		height: 100%;
 	}
 
-	.up-arrow {
-		top: 5%;
-		left: 35%;
-		transform: rotateZ(-90deg)
+	.ansvers {
+		width: 100%;
+		height: 150px;
+		color: #4ca1af;
 	}
 
-	.down-arrow {
-		top: 75%;
-		left: 35%;
-		transform: rotate(90deg)
-	}
-	
-	.left-arrow {
-		top: 40%;
-		left: 5%;
-		transform: rotate(180deg)
+	.ansvers div {
+		font-size: 72px;
 	}
 
-	.right-arrow {
-		top: 40%;
-		left: 65%;
-	} */
+	.exit {
+		top: 70%;
+		left: calc(50% - 80px);
+		width: 160px;
+		height: 160px;
+	}
+
+	.exit div {
+		width: 75px;
+		height: 75px;
+		transform: translate(0) !important;
+	}
+
+	.exit div:first-child {
+		margin-right: 5px;
+	}
+
+	.exit div:last-child {
+		margin-left: 5px;
+	}
+	.score-box {
+		width: 100px;
+		height: 100px;
+		font-size: 24px;
+		margin-left: 0%;
+		margin-bottom: -5%;
+	}
+
+	.best-box {
+		width: 100px;
+		height: 100px;
+		font-size: 24px;
+		margin-right: 0%;
+		margin-bottom: -5%;
+	}
+
+	.score-box::before {
+		font-size: 24px;
+		left: 15%;
+		top: -40%;
+	}
+
+	.best-box::before {
+		font-size: 24px;
+		left: -2%;
+		top: -40%;
+	}
 }
