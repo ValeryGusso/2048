@@ -22,7 +22,7 @@ const $wAnsvers = document.querySelectorAll('#w-body .ansvers > div')
 
 // Прослушка событий
 document.addEventListener('keydown', move)
-$menuList.addEventListener('touchstart', menuClick)
+// $menuList.addEventListener('touchstart', menuClick)
 $menuList.addEventListener('click', menuClick)
 $stn.addEventListener('click', setClick)
 $arrow.addEventListener('click', back)
