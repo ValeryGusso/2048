@@ -22,7 +22,8 @@ const $wAnsvers = document.querySelectorAll('#w-body .ansvers > div')
 
 // Прослушка событий
 document.addEventListener('keydown', move)
-$menuList.addEventListener('click', menuClick)
+$menuList.addEventListener('touchstart', menuClick)
+// $menuList.addEventListener('click', menuClick)
 $stn.addEventListener('click', setClick)
 $arrow.addEventListener('click', back)
 $exit.addEventListener('click', exit)
@@ -33,6 +34,7 @@ function menuClick(event) {
 		$menuList.style.transition = '0.75s'
 		$menuList.style.filter = 'opacity(0)'
 		$title.style.top = '-5%'
+		$stn.style.display = 'block'
 		setTimeout(() => {
 			$menuList.style.display = 'none'
 			$settings.forEach(e => (e.style.display = 'flex'))
@@ -87,6 +89,7 @@ function menuClick(event) {
 		$menuList.style.transition = '0.75s'
 		$menuList.style.filter = 'opacity(0)'
 		$title.style.top = '0%'
+		$stn.style.display = 'block'
 		setTimeout(() => {
 			$about.style.display = 'flex'
 			$about.style.filter = 'opacity(1)'
@@ -149,6 +152,7 @@ function back() {
 		$about.style.display = 'none'
 		$menuList.style.display = 'flex'
 		$menuList.style.filter = 'opacity(1)'
+		$stn.style.display = 'none'
 	}, 500)
 	$arrow.style.display = 'none'
 }

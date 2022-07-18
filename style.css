@@ -410,17 +410,6 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-	/* * {
-		user-select: none;
-		overflow: hidden;
-	} */
-
-	/* body {
-		user-select: none;
-		overflow: hidden;
-		width: 100%;
-		height: 100vh;
-	} */
 
 	.header {
 		width: 70%;
@@ -486,15 +475,6 @@ body {
 		font-size: 50px;
 	}
 
-	/* .menu {
-		margin: 0;
-		padding: 0;
-		width: 100%;
-		height: 100vh;
-		user-select: none;
-		overflow: hidden!important;
-	} */
-
 	.menu-list {
 		position: absolute;
 		top: 15%;
@@ -515,8 +495,14 @@ body {
 	}
 
 	.settings {
-		margin-bottom: 20vmin;
+		display: none;
+		position: absolute;
+		width: 100%;
+		height: 100vh;
+		overflow: hidden;
+		top: 0;
 	}
+
 	.settings > div {
 		display: none;
 		flex-direction: column;
@@ -536,14 +522,14 @@ body {
 		width: 75px;
 		height: 75px;
 		top: 10%;
-		left: 75px;
+		left: calc(50% - 37.5px);
 	}
 
 	.arrow {
 		display: none;
 		z-index: 6;
 		position: absolute;
-		top: calc(100% - 25vmin);
+		top: calc(100% - 70vmin);
 		left: calc(0% - 1.5vmin);
 		width: 100%;
 	}
@@ -600,7 +586,7 @@ body {
 
 	.exit {
 		position: absolute;
-		top: calc(100% - 25vmin);
+		top: calc(100% - 40vmin);
 		left: calc(0% + 4vmin);
 		width: 100%;
 	}
