@@ -41,6 +41,7 @@ function menuClick(event) {
 			$settings.forEach(e => (e.style.transition = '1s'))
 			$settings.forEach(e => (e.style.transform = 'translateX(0px)'))
 			$settings.forEach(e => (e.style.filter = 'opacity(1)'))
+			$arrow.style = '--ar: 120vmin!important'
 		}, 500)
 	}
 	if (event.target.dataset.btn === 'play') {
@@ -88,6 +89,7 @@ function menuClick(event) {
 	if (event.target.dataset.btn === 'about') {
 		$menuList.style.transition = '0.75s'
 		$menuList.style.filter = 'opacity(0)'
+		$arrow.style = '--ar: 111vmin!important'
 		$title.style.top = '0%'
 		setTimeout(() => {
 			$about.style.display = 'flex'
