@@ -4,7 +4,9 @@
 	margin: 0;
 	padding: 0;
 	user-select: none;
-	font-family: 'Knewave', cursive;
+	font-family: 'Knewave', cursive, "Comic Sans MS", "Comic Sans", cursive;
+	/* font-family: "Comic Sans MS", "Comic Sans", cursive; */
+	font-weight: bold;
 }
 
 body {
@@ -101,8 +103,6 @@ body {
 	box-sizing: border-box;
 	display: flex;
 	flex-wrap: wrap;
-	/* width: 600px;
-	height: 600px; */
 	width: 70vmin;
 	height: 70vmin;
 	border-radius: var(--br);
@@ -113,7 +113,7 @@ body {
 .box {
 	position: absolute;
 	display: flex;
-	font-size: 52px;
+	font-size: var(--fs);
 	box-sizing: border-box;
 	border-radius: 30%;
 	background-color: burlywood;
@@ -282,7 +282,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	list-style: none;
-	font-size: 5vmin;
+	font-size: 4vmin;
 	width: 80vmin;
 	height: 15vmin;
 }
@@ -319,7 +319,7 @@ body {
 	position: absolute;
 	width: 13vmin;
 	height: 13vmin;
-	top: 4vmin;
+	top: calc(50% - 6.5vmin);
 	left: calc(50% - 6.5vmin);
 	transition: 0s;
 }
@@ -407,48 +407,52 @@ body {
 
 @media only screen and (max-width: 600px) {
 
+	* {
+		overflow: hidden!important;
+	}
+
 body {
 	position: relative;
 }
 	.container {
-		/* position: absolute; */
 		user-select: none;
-		overflow: hidden!important;
 		width: 100%;
 		height: 100vh;
 	}
 
 	.score-box {
 		position: absolute;
-		top:  calc(50% - 90vmin);
+		top:  calc(50% - 77vmin);
 		left: 0%;
 		width: 25vmin;
 		height: 20vmin;
+		overflow:visible!important;
 	}
 
 	.best-box {
 		position: absolute;
-		top:  calc(50% - 90vmin);
+		top:  calc(50% - 77vmin);
 		left: 60vmin;
 		width: 25vmin;
 		height: 20vmin;
+		overflow:visible!important;
 	}
 
 	.score-box::before {
 		font-size: 8vmin;
-		left: 0%;
-		top: -12vmin;
+		left: 1vmin;
+		top: -12vmin;	
 	}
 
 	.best-box::before {
 		font-size: 8vmin;
-		left: 0%;
+		left: -4vmin;
 		top: -12vmin;
 	}
 
 	.game {
 		position: absolute;
-		top:  calc(50% - 65vmin);
+		top:  calc(50% - 55vmin);
 		width: 90vmin;
 		height: 90vmin;
 		border-radius: 20px !important;
@@ -539,7 +543,7 @@ body {
 		width: 22vmin;
 		height: 22vmin;
 		transform: translate(0) !important;
-		margin-left: 2vmin!important;
+		margin-left: -2vmin!important;
 	}
 
 	.about {
@@ -555,7 +559,8 @@ body {
 	}
 
 	.how {
-		margin-top: 10vmin;
+		/* margin-top: 10vmin; */
+		height: 11vmin;
 		font-size: 10vmin;
 		color: burlywood;
 	}
@@ -593,7 +598,7 @@ body {
 		position: absolute;
 		width: 100%;
 		height: 23vmin;
-		top: calc(50% + 26vmin)!important;
+		top: calc(50% + 36vmin)!important;
 		left: 1vmin!important;
 		z-index: 6;
 	}

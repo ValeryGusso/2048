@@ -42,6 +42,7 @@ function menuClick(event) {
 			$settings.forEach(e => (e.style.transform = 'translateX(0px)'))
 			$settings.forEach(e => (e.style.filter = 'opacity(1)'))
 			$arrow.style = '--ar: 120vmin!important'
+			$arrow.style.display = 'flex'
 		}, 500)
 	}
 	if (event.target.dataset.btn === 'play') {
@@ -90,6 +91,7 @@ function menuClick(event) {
 		$menuList.style.transition = '0.75s'
 		$menuList.style.filter = 'opacity(0)'
 		$arrow.style = '--ar: 111vmin!important'
+		$arrow.style.display = 'flex'
 		$title.style.top = '0%'
 		setTimeout(() => {
 			$about.style.display = 'flex'
@@ -238,7 +240,7 @@ class Box {
 	constructor(value = 0, col, row) {
 		const box = document.createElement('div')
 		box.classList.add('box')
-		box.style = `--t:${speed}s`
+		box.style = `--t:${speed}s; --fs:${20 / size}vmin`
 		box.style.width = box.style.height = `${92 / size}%`
 		box.textContent = value
 		$game.insertAdjacentElement('beforeend', box)
