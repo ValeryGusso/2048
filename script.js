@@ -23,7 +23,7 @@ const $wAnsvers = document.querySelectorAll('#w-body .ansvers > div')
 // Прослушка событий
 document.addEventListener('keydown', move)
 $menuList.addEventListener('touchstart', menuClick)
-// $menuList.addEventListener('click', menuClick)
+document.addEventListener('click', menuClick)
 $stn.addEventListener('click', setClick)
 $arrow.addEventListener('click', back)
 $exit.addEventListener('click', exit)
@@ -89,12 +89,12 @@ function menuClick(event) {
 		$menuList.style.transition = '0.75s'
 		$menuList.style.filter = 'opacity(0)'
 		$title.style.top = '0%'
-		$stn.style.display = 'block'
 		setTimeout(() => {
 			$about.style.display = 'flex'
 			$about.style.filter = 'opacity(1)'
 			$about.style.transform = 'translateX(0px)'
 			$menuList.style.display = 'none'
+			$stn.style.display = 'block'
 			$settings[0].style.display = 'flex'
 			$settings[0].style.transform = 'translateX(0px)'
 			$settings[0].style.filter = 'opacity(1)'

@@ -101,8 +101,8 @@ body {
 	box-sizing: border-box;
 	display: flex;
 	flex-wrap: wrap;
-	width: 600px;
-	height: 600px;
+	/* width: 600px;
+	height: 600px; */
 	width: 70vmin;
 	height: 70vmin;
 	border-radius: var(--br);
@@ -225,9 +225,8 @@ body {
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	width: 80vmin;
+	top: 10vmin;
 	height: 30vmin;
-	top: 10%;
 	transition: 1s;
 }
 
@@ -235,20 +234,18 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 150px;
-	height: 150px;
-	font-size: 100px;
+	width: 17vmin;
+	height: 17vmin;
+	font-size: 12vmin;
 	background: burlywood;
 	border-radius: 30%;
-	margin-left: 15px;
+	margin-left: 3vmin;
 }
 
 .menu-list ul {
-	display: flex;
+	display: flex; 
 	list-style: none;
-	font-size: 56px;
-	flex-direction: row;
-	/* margin-top: 100px; */
+	font-size: 7vmin;
 }
 
 .menu-list ul:hover li {
@@ -264,14 +261,15 @@ body {
 	position: relative;
 	cursor: pointer;
 	display: flex;
-	width: 250px;
-	height: 250px;
+	width: 30vmin;
+	height: 30vmin;
 	background: burlywood;
 	border-radius: 50px;
 	align-items: center;
 	justify-content: center;
 	transition: 1s;
-	margin-left: 20px;
+	margin-left: 3vmin;
+	z-index: 10;
 }
 
 .menu-list ul li:first-child {
@@ -280,11 +278,13 @@ body {
 
 .settings > div {
 	display: none;
-	justify-content: left;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
 	list-style: none;
-	font-size: 36px;
-	background: none;
-	margin-top: 50px;
+	font-size: 5vmin;
+	width: 80vmin;
+	height: 15vmin;
 }
 
 .main,
@@ -300,12 +300,12 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 28px;
-	margin-right: 15px;
+	font-size: 3vmin;
+	margin-right: 2vmin;
 	background: olive;
 	border-radius: 30%;
-	width: 125px;
-	height: 125px;
+	width: 13vmin;
+	height: 13vmin;
 	transition: 1s;
 }
 
@@ -317,10 +317,10 @@ body {
 
 .options img {
 	position: absolute;
-	width: 125px;
-	height: 125px;
-	top: -10%;
-	left: 165px;
+	width: 13vmin;
+	height: 13vmin;
+	top: 4vmin;
+	left: calc(50% - 6.5vmin);
 	transition: 0s;
 }
 
@@ -358,25 +358,23 @@ body {
 	background: burlywood;
 }
 
-.arrow {
+#arrow {
 	position: absolute;
-	display: flex;
+	display: none;
 	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
-	top: 38%;
-	left: 22%;
-	width: 180px;
-	height: 170px;
+	width: 22vmin;
+	height: 22vmin;
+	top: calc(50% - 5vmin);
+	left: calc(50% - 65vmin);
 }
 
 .arrow div {
 	display: flex;
-	width: 80px;
-	height: 80px;
+	width: 10vmin;
+	height: 10vmin;
 	background: burlywood;
-	margin-left: 10px;
-	margin-bottom: 10px;
+	margin-left: 1vmin;
+	margin-bottom: 1vmin;
 	border-radius: 30%;
 	align-items: center;
 	justify-content: center;
@@ -395,11 +393,9 @@ body {
 	flex-wrap: wrap;
 	text-align: center;
 	line-height: 1.5em;
-	width: 75vmin;
-	height: 60vmin;
-	font-size: 28px;
-	margin-top: 150px;
-	margin-left: 100px;
+	width: 80vmin;
+	height: 45vmin;
+	font-size: 3vmin;
 	transition: 0.5s;
 }
 
@@ -411,15 +407,9 @@ body {
 
 @media only screen and (max-width: 600px) {
 
-	.header {
-		width: 70%;
-		height: 100px;
-		font-size: 18px;
-		padding-bottom: 10px;
-		margin-bottom: 20px;
-		margin-top: 100px;
-	}
-
+body {
+	position: relative;
+}
 	.container {
 		position: absolute;
 		user-select: none;
@@ -428,14 +418,14 @@ body {
 
 	.score-box {
 		position: absolute;
-		top: 7%;
-		left: 15%;
+		top: 20vmin;
+		left: 15vmin;
 	}
 
 	.best-box {
 		position: absolute;
-		top: 7%;
-		right: 15%;
+		top: 20vmin;
+		right: 15vmin;
 	}
 
 	.score-box::before {
@@ -459,7 +449,7 @@ body {
 	}
 
 	.box {
-		font-size: 14px;
+		font-size: 5vmin;
 	}
 
 	.title {
@@ -475,14 +465,18 @@ body {
 		font-size: 50px;
 	}
 
+	.menu {
+		width: 100%;
+		height: 100vh;
+	}
 	.menu-list {
 		position: absolute;
-		top: 15%;
 		width: 50%;
 	}
+
 	.menu-list ul {
 		flex-wrap: wrap;
-		font-size: 38px;
+		font-size: 10vmin;
 		align-items: center;
 		justify-content: center;
 	}
@@ -491,15 +485,14 @@ body {
 		width: 45vmin;
 		height: 45vmin;
 		border-radius: 30px;
-		margin: 0 10px 10px 0;
+		margin: 0 3vmin 3vmin 0;
 	}
 
 	.settings {
 		display: none;
 		position: absolute;
 		width: 100%;
-		height: 100vh;
-		overflow: hidden;
+		height: calc(100vh - 25vmin);
 		top: 0;
 	}
 
@@ -507,55 +500,59 @@ body {
 		display: none;
 		flex-direction: column;
 		justify-content: left;
-		font-size: 22px;
-		margin-top: 10px;
+		font-size: 1.5em;
+		width: 100%;
+		height: 30vmin;
 	}
 
 	.options div {
-		font-size: 14px;
-		width: 20vmin;
-		height: 20vmin;
+		font-size: 4vmin;
+		width: 18vmin;
+		height: 18vmin;
 		filter: none !important;
 	}
 
 	.options img {
-		width: 75px;
-		height: 75px;
-		top: 10%;
-		left: calc(50% - 37.5px);
+		width: 20vmin;
+		height: 20vmin;
+		top: 0vmin;
+		left: calc(50% - 10vmin);
 	}
 
 	.arrow {
-		display: none;
-		z-index: 6;
+		display: flex;
 		position: absolute;
-		top: calc(100% - 40vmin);
-		left: calc(0% + 4vmin);
 		width: 100%;
+		/* top: calc(100%)!important; */
+		top: calc(100vh - 23vmin)!important;
+		left: 1vmin!important;
+		z-index: 6;
 	}
 
 	.arrow div {
-		font-size: 52px;
+		font-size: 12vmin;
 		width: 22vmin;
 		height: 22vmin;
 		transform: translate(0) !important;
+		margin-left: 2vmin!important;
 	}
 
 	.about {
 		display: none;
 		flex-direction: column;
 		flex-wrap: wrap;
-		margin: 120px 0 0 0;
+		margin-top: 0vmin;
 		width: 90%;
-		height: 80%;
-		font-size: 18px;
+		height: 80vh;
+		font-size: 5.5vmin;
 	}
 
 	.how {
-		margin-top: 30px;
-		font-size: 32px;
+		margin-top: 10vmin;
+		font-size: 10vmin;
 		color: burlywood;
 	}
+
 	.warning {
 		display: none;
 		align-items: center;
@@ -585,25 +582,26 @@ body {
 	}
 
 	.exit {
+		display: flex;
 		position: absolute;
-		top: calc(100% - 40vmin);
-		left: calc(0% + 4vmin);
 		width: 100%;
+		top: calc(100% - 23vmin)!important;
+		left: 1vmin!important;
+		z-index: 6;
 	}
 
 	.exit div {
+		font-size: 12vmin;
 		width: 22vmin;
 		height: 22vmin;
 		transform: translate(0) !important;
+		margin-left: 2vmin!important;
 	}
 
 	.exit div:first-child {
-		margin-right: 5px;
+		margin: 0;
 	}
 
-	.exit div:last-child {
-		margin-left: 5px;
-	}
 	.score-box {
 		width: 100px;
 		height: 100px;
